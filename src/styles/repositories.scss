@@ -1,0 +1,170 @@
+@import "_variables.scss";
+
+
+section {
+
+    &.repository-list {
+
+        .box-item {
+            position: relative;
+            -webkit-backface-visibility: hidden;
+            width: 415px;
+            margin-bottom: 35px;
+            max-width: 100%;
+
+            .flip-box {
+                -ms-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+                -webkit-transform-style: preserve-3d;
+                perspective: 1000px;
+                -webkit-perspective: 1000px;
+
+                &:hover .flip-box-front {
+                    -ms-transform: rotateY(-180deg);
+                    -webkit-transform: rotateY(-180deg);
+                    transform: rotateY(-180deg);
+                    -webkit-transform-style: preserve-3d;
+                    -ms-transform-style: preserve-3d;
+                    transform-style: preserve-3d;
+                }
+
+                &:hover .flip-box-back {
+                    -ms-transform: rotateY(0deg);
+                    -webkit-transform: rotateY(0deg);
+                    transform: rotateY(0deg);
+                    -webkit-transform-style: preserve-3d;
+                    -ms-transform-style: preserve-3d;
+                    transform-style: preserve-3d;
+                }
+
+                .flip-box-front,
+                .flip-box-back {
+                    background-size: cover;
+                    background-position: center;
+                    border-radius: 8px;
+                    min-height: 200px;
+                    -ms-transition: transform 0.7s cubic-bezier(.4, .2, .2, 1);
+                    transition: transform 0.7s cubic-bezier(.4, .2, .2, 1);
+                    -webkit-transition: transform 0.7s cubic-bezier(.4, .2, .2, 1);
+                    -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+                }
+
+                .flip-box-front {
+                    -ms-transform: rotateY(0deg);
+                    -webkit-transform: rotateY(0deg);
+                    transform: rotateY(0deg);
+                    -webkit-transform-style: preserve-3d;
+                    -ms-transform-style: preserve-3d;
+                    transform-style: preserve-3d;
+                }
+
+                .flip-box-back {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+
+                    -ms-transform: rotateY(180deg);
+                    -webkit-transform: rotateY(180deg);
+                    transform: rotateY(180deg);
+                    -webkit-transform-style: preserve-3d;
+                    -ms-transform-style: preserve-3d;
+                    transform-style: preserve-3d;
+
+                    .owner-avatar {
+                        width: 100%;
+                        max-width: 50px;
+                        border-radius: 100%;
+                    }
+
+                    .bg-purple {
+                        background-image: linear-gradient(130deg, #d400ff 0%, #9f00de 100%);
+                        color: #fff;
+                        font-size: 14px;
+                        font-weight: normal;
+                        text-decoration: none;
+                        transition: filter 300ms ease;
+                        filter: saturate(0) opacity(0.15);
+
+
+                        &:hover {
+                            filter: saturate(1) opacity(1);
+                        }
+                    }
+                }
+
+                & .inner {
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    padding: 60px;
+                    outline: 1px solid transparent;
+                    -webkit-perspective: inherit;
+                    perspective: inherit;
+                    z-index: 2;
+
+                    transform: translateY(-50%) translateZ(60px) scale(.94);
+                    -webkit-transform: translateY(-50%) translateZ(60px) scale(.94);
+                    -ms-transform: translateY(-50%) translateZ(60px) scale(.94);
+                    top: 50%;
+                }
+
+                .flip-box-header {
+                    font-size: 16px;
+                }
+
+                & p {
+                    font-size: 13px;
+                    line-height: 1.5em;
+                }
+
+                .flip-box-img {
+                    margin-top: 25px;
+                }
+
+                .flip-box-button {
+                    background-color: transparent;
+                    border: 2px solid rgb(48, 46, 46);
+                    border-radius: 2px;
+                    color: #000;
+                    cursor: pointer;
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin-top: 25px;
+                    padding: 15px 20px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        h1 {
+            margin-bottom: 16px;
+        }
+
+        ul {
+
+            list-style: none;
+
+            li {
+
+                strong {
+                    font-size: 16px;
+                }
+
+
+
+                p {
+                    font-size: 13px;
+                    color: #444;
+                    margin-top: 8px;
+                }
+
+            }
+
+        }
+    }
+
+
+
+}
